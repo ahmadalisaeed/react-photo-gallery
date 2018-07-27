@@ -32,11 +32,11 @@ class Gallery extends React.Component {
     // subtract 1 pixel because the browser may round up a pixel
     const width = this.state.containerWidth - 1;
     const { photos, columns, margin, onClick } = this.props;
-    const thumbs = computeSizes({ width, columns, margin, photos });
+    // const thumbs = computeSizes({ width, columns, margin, photos });
     return (
       <div className="react-photo-gallery--gallery">
         <div ref={c => (this._gallery = c)} style={{ display: 'flex', flexWrap: 'wrap' }}>
-          {thumbs.map((photo, index) => {
+          {photos.map((photo, index) => {
             return (
               <ImageComponent
                 key={photo.key || photo.src}
